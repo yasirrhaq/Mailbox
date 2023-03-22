@@ -3,11 +3,19 @@ package com.example.papbmailbox;
 import android.text.TextUtils;
 
 public class Mail {
-    public String name, excerpt;
+    private String name, excerpt;
 
     public Mail(String n, String e) {
         this.name = n;
         this.excerpt = e;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getExcerpt() {
+        return excerpt;
     }
 
     public String getInitial() {

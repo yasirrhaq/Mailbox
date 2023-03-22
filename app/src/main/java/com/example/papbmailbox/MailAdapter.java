@@ -40,8 +40,8 @@ public class MailAdapter
                     filtered = mails;
                 } else {
                     for (Mail m : mails) {
-                        if (m.name.toLowerCase().contains(query) ||
-                                m.excerpt.toLowerCase().contains(query)) {
+                        if (m.getName().toLowerCase().contains(query) ||
+                                m.getExcerpt().toLowerCase().contains(query)) {
                             filtered.add(m);
                         }
                     }
@@ -83,11 +83,12 @@ public class MailAdapter
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         VHMail vh = (VHMail) holder;
-        Mail m = this.filteredMails.get(position);
+        Mail m = filteredMails.get(position);
         vh.tvInitial.setText(m.getInitial());
-        vh.tvName.setText(m.name);
-        vh.tvExcerpt.setText(m.excerpt);
+        vh.tvName.setText(m.getName());
+        vh.tvExcerpt.setText(m.getExcerpt());
     }
+
 
     @Override
     public int getItemCount() {

@@ -31,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         rvMail.setAdapter(mailAdapter);
 
         EditText etFilter = this.findViewById(R.id.editTextFilter);
+        setupFilter(etFilter);
+    }
+
+    private void setupFilter(EditText etFilter){
         etFilter.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
